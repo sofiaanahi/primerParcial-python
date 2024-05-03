@@ -1,4 +1,5 @@
 import pandas as pd 
+import matplotlib.pyplot as plt 
 
 
 productos = [
@@ -54,3 +55,13 @@ cantidad_disponible_nuevo = df[df['cantidad_disponible'] < 56]
 print(cantidad_disponible_nuevo)
 
 df.rename(columns={'cantidad_disponible' : 'cantidad_disponible_nuevo'}, inplace=True)
+
+# punto 4 graficos 
+
+plt.plot(df["nombre"], df["cantidad_disponible_nuevo"])
+plt.xlabel("nombre")
+plt.ylabel("cantidad_disponible_nuevo")
+plt.title("grafico")
+plt.legend()
+
+plt.show()
